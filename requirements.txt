@@ -4,3 +4,4 @@ lxml
 cfscrape
 beautifulsoup4
 EdgeGPT
+fuzzywuzzy
