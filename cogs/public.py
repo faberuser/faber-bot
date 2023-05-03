@@ -20,12 +20,12 @@ class Public(commands.Cog):
 
         elif message.channel.id == 515155645020897280:
             prefixes = [";;", "."]
-            ids = [184405311681986560, 547905866255433758]
+            ids = [184405311681986560, 547905866255433758, 945683386100514827]
             if message.content.startswith(tuple(prefixes)):
-                await asyncio.sleep(30)
+                await asyncio.sleep(60)
                 await message.delete()
             elif message.author.id in ids:
-                await asyncio.sleep(30)
+                await asyncio.sleep(60)
                 await message.delete()
 
         elif message.channel.id == 1026085722115018822:
