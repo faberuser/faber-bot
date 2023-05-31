@@ -2,4 +2,3 @@ venv
 log.log
 __pycache__
 .vscode
-.env
