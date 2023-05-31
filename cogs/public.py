@@ -44,15 +44,6 @@ class Public(commands.Cog):
                         value=f"`{discord.__version__}`")
         await ctx.reply(embed=embed)
 
-    @commands.command()
-    async def invite(self, ctx):
-        embed = discord.Embed(
-            title="Bot Invite",
-            url="https://discord.com/oauth2/authorize?client_id=1002148185290067999&scope=bot%20applications.commands&permissions=8",
-            colour=config.embed_color,
-        )
-        await ctx.reply(embed=embed)
-
     @commands.command(aliases=["pong"])  # ping from server to API
     async def ping(self, ctx):
         embed = discord.Embed(
