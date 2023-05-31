@@ -5,3 +5,4 @@ cfscrape
 beautifulsoup4
 EdgeGPT
 fuzzywuzzy
+urllib3==1.26.16
