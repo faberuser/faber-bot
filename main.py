@@ -1,4 +1,8 @@
-import discord, os, config, logging
+import os
+import logging
+from dotenv import load_dotenv
+import config
+import discord
 from discord.ext import commands
 
 logging.basicConfig(
@@ -31,6 +35,8 @@ class Client(commands.Bot):
 client = Client()
 
 # help command
+
+
 class MinimalHelpCommand(commands.MinimalHelpCommand):
     async def send_pages(self):
         destination = self.get_destination()
