@@ -1,4 +1,8 @@
-import discord, asyncio, sys, aiohttp, config
+import discord
+import asyncio
+import sys
+import aiohttp
+import config
 from discord.ext import commands
 
 
@@ -28,22 +32,6 @@ class Public(commands.Cog):
                 await asyncio.sleep(60)
                 await message.delete()
 
-        elif message.channel.id == 1026085722115018822:
-            if ".gradio.app" in message.content:
-                async for msg in message.channel.history(limit=100):
-                    if ".gradio.app" in msg.content and msg.id != message.id:
-                        await msg.delete()
-
-            if ".ngrok.io" in message.content:
-                async for msg in message.channel.history(limit=100):
-                    if ".ngrok.io" in msg.content and msg.id != message.id:
-                        await msg.delete()
-
-            if "192.168.2.179" in message.content:
-                async for msg in message.channel.history(limit=100):
-                    if "192.168.2.179" in msg.content and msg.id != message.id:
-                        await msg.delete()
-
     @commands.command(aliases=["client", "info", "infos"])
     async def bot(self, ctx):
         embed = discord.Embed(
@@ -52,7 +40,8 @@ class Public(commands.Cog):
             colour=config.embed_color,
         )
         embed.add_field(name="**Python**", value=f"`{sys.version}`")
-        embed.add_field(name="**discord.py**", value=f"`{discord.__version__}`")
+        embed.add_field(name="**discord.py**",
+                        value=f"`{discord.__version__}`")
         await ctx.reply(embed=embed)
 
     @commands.command()
@@ -73,7 +62,8 @@ class Public(commands.Cog):
         )
         await ctx.reply(embed=embed)
 
-    @commands.command(aliases=["user"])  # get userinfo from self or a server member
+    # get userinfo from self or a server member
+    @commands.command(aliases=["user"])
     async def userinfo(self, ctx, member: discord.Member = None):
         if member is not None:
             au = member
@@ -175,7 +165,8 @@ class Public(commands.Cog):
         embed.set_image(url=ctx.guild.banner_url)
         embed.add_field(name="Member count:", value=ctx.guild.member_count)
         embed.add_field(name="Member boost:", value=boostguys)
-        embed.add_field(name="Nitro Boost level", value=str(ctx.guild.premium_tier))
+        embed.add_field(name="Nitro Boost level",
+                        value=str(ctx.guild.premium_tier))
         embed.add_field(
             name="Text/Voice Channels:", value=f"{textchannel}/{voicechannel}"
         )

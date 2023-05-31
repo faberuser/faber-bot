@@ -1,4 +1,8 @@
-import asyncio, os, re, config, discord
+import asyncio
+import os
+import re
+import config
+import discord
 from discord.ext import commands
 from EdgeGPT import Chatbot, ConversationStyle
 
@@ -91,13 +95,16 @@ class BingAI(commands.Cog):
         if learn_more != "":
             embed.add_field(name="Learn more:", value=learn_more)
         if suggested_response != "":
-            embed.add_field(name="Suggested responses:", value=suggested_response)
+            embed.add_field(name="Suggested responses:",
+                            value=suggested_response)
         embed.add_field(
             name="Throttling:",
             value="`"
-            + str(response["item"]["throttling"]["numUserMessagesInConversation"])
+            + str(response["item"]["throttling"]
+                  ["numUserMessagesInConversation"])
             + "/"
-            + str(response["item"]["throttling"]["maxNumUserMessagesInConversation"])
+            + str(response["item"]["throttling"]
+                  ["maxNumUserMessagesInConversation"])
             + "`\nSend `bing reset` to reset the conversation",
         )
         return embed, suggested_response_list

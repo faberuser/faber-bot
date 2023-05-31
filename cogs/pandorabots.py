@@ -1,4 +1,10 @@
-import discord, re, aiohttp, asyncio, config, random, time
+import discord
+import re
+import aiohttp
+import asyncio
+import config
+import random
+import time
 from discord.ext import commands
 
 
@@ -20,7 +26,8 @@ class Pandora(commands.Cog):
             async with message.channel.typing():
                 try:
                     input = re.sub(
-                        "<@!?{0.user.id}>".format(self.client), "", message.content
+                        "<@!?{0.user.id}>".format(
+                            self.client), "", message.content
                     ).strip()
                     print("{0}: ".format(message.author) + input)
                     params = {
@@ -34,7 +41,8 @@ class Pandora(commands.Cog):
                     )
                     if resp.status == 200:
                         text = await resp.text()
-                        text = text[text.find("<that>") + 6 : text.rfind("</that>")]
+                        text = text[text.find(
+                            "<that>") + 6: text.rfind("</that>")]
                         text = (
                             text.replace("&quot;", '"')
                             .replace("&lt;", "<")
