@@ -5,6 +5,7 @@ import config
 import discord
 from discord.ext import commands
 
+load_dotenv()
 logging.basicConfig(
     handlers=[logging.FileHandler("./log.log", "a", "utf-8")],
     level=logging.INFO,
@@ -53,4 +54,4 @@ async def on_ready():
     print("Logged in as {0} ({0.id})".format(client.user))
 
 
-client.run(config.token, reconnect=True)
+client.run(os.getenv('DISCORD_TOKEN'), reconnect=True)
