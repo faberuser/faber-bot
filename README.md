@@ -1,2 +1,3 @@
 # faber-bot
-Personal Discord bot for personal use
+
+personal discord bot for personal use
