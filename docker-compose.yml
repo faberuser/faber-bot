@@ -1,5 +1,9 @@
 services:
   bot:
-    build: .
+    container_name: faber-bot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: faber-bot
     environment:
       - DISCORD_TOKEN=$DISCORD_TOKEN
